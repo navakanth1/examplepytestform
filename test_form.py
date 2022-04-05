@@ -7,6 +7,7 @@ import time
 def setUp():
     global name,driver
     name = input("enter the name:")
+
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.maximize_window()
     yield
@@ -22,5 +23,5 @@ def test_form(setUp):
     time.sleep(1)
     driver.find_element_by_xpath("/html/body/div/div/div[2]/form/table/tbody/tr[4]/td[2]/div/input").click()
     time.sleep(2)
-    driver.find_element_by_name("subbtn")
+    driver.find_element_by_name("subbtn").click()
     time.sleep(5)
